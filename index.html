@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice Boucles JS</title>
+  </head>
+  <body>
+    <script>
+      //😊 Exercice 1 : Compter de 1 à 10 avec une boucle for
+
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+
+      //😊 Exercice 2 : Afficher les nombres pairs de 0 à 20
+
+      for (let i = 2; i <= 20; i += 2) {
+        console.log(i);
+      }
+
+      //😊 Exercice 3 : Compter à rebours
+
+      let i = 10;
+      do {
+        console.log(i);
+        i--;
+      } while (i >= 1);
+
+      //😅 Exercice 4 : Somme des nombres de 1 à 100
+
+      let somme = 0;
+
+      for (let i = 1; i <= 100; i++) {
+        somme += i;
+      }
+
+      console.log(somme);
+
+      //😅 Exercice 5 : Afficher les éléments d'un tableau
+
+      const animaux = ["chien", "chat", "lapin", "oiseau"];
+
+      for (const animal of animaux) {
+        console.log(animal);
+      }
+
+      //😰 Exercice 6 : Boucle imbriquée (tables de multiplication)
+
+      for (let j = 1; j <= 5; j++) {
+        console.log(`${i} * ${j} = ${i * j}`);
+      }
+      console.log("");
+
+      //😰 Exercice 7 : Trouver un élément dans un tableau
+
+      const nombres = [10, 20, 30, 40, 50];
+      const nombreCherche = 30;
+
+      let trouve = false;
+
+      for (const nombre of nombres) {
+        if (nombre === nombreCherche) {
+          trouve = true;
+          break;
+        }
+      }
+
+      if (trouve) {
+        console.log(`${nombreCherche} est présent dans le tableau.`);
+      } else {
+        console.log(`${nombreCherche} n'est pas présent dans le tableau.`);
+      }
+
+      //😰 Exercice 8 : FizzBuzz
+
+      for (let i = 1; i <= 30; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+          console.log("Fizz");
+        } else if (i % 5 === 0) {
+          console.log("Buzz");
+        } else {
+          console.log(i);
+        }
+      }
+
+      //😰 Exercice 9 : Jeu de devinette (avec plusieurs réponses)
+
+      const nombreSecret = Math.floor(Math.random() * 10) + 1;
+      let resultat = "";
+
+      while (true) {
+        let proposition = prompt(
+          `${resultat} Essayez encore, chiffre de 1 à 10 (ou appuyez sur Annuler pour quitter) :`
+        );
+
+        if (proposition === null) {
+          console.log("Jeu terminé.");
+          break;
+        }
+        proposition = parseInt(proposition, 10);
+
+        if (isNaN(proposition)) {
+          console.log("Veuillez entrer un nombre valide.");
+          resultat = "";
+          continue;
+        }
+        if (proposition < nombreSecret) {
+          resultat = "Trop petit";
+        } else if (proposition > nombreSecret) {
+          resultat = "Trop grand";
+        } else {
+          console.log("Félicitations ! Vous avez trouvé le nombre.");
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>
